@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Head from "next/head";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Layout from "../components/Layout";
 import { flexbox, height } from '@mui/system';
 import styles from '../styles/emailtemplate.module.css'
 import {
@@ -24,14 +25,16 @@ function handlepopup(){
   setaddmail(true);
 }
     return (
+      <div className={styles.page}>
       
-        <div>
+       
         <Head>
         <title>Email Templates | Settings</title>
       </Head>
+     
    
         
-        
+     
          {showtitle ?  
          ( 
          <div style={{display:"flex",justifyContent:"space-between"}}> 
