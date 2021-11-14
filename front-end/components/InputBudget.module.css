@@ -1,0 +1,26 @@
+
+  .navbar {
+    width: 100%;
+    margin: auto;
+    padding: 1px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eff5f5;
+    color: #18e090b6;
+  }
+  .exitbtn {
+    margin-right: 30px;
+    padding: 10px 15px;
+  }
+  .tripnamereq {
+    color: #cc0000;
+  }
+  label.tripnamereq::after {
+    content: "*";
+    margin-right: 4px;
+    color: #cc0000;
+  }
+  .tripnameinput {
+    padding: 0px 200px 10px 10px;
+  }

@@ -11,7 +11,7 @@ import Stack from "@mui/material/Stack";
 import { signin, authenticate, isAutheticated } from "../auth/Auth";
 
 // import the library
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // import your icons
 import {

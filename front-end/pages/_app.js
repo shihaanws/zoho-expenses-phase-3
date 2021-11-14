@@ -33,10 +33,12 @@ function MyApp({ Component, pageProps }) {
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
+         
       </Head>
       <AuthProvider>
         <Component {...pageProps} />
       </AuthProvider>
+     
     </>
   );
 }
