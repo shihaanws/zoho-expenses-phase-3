@@ -33,7 +33,7 @@ export default function InputBudget() {
         </h5>
         <div>
           <button className={classes.exitbtn}>
-            <Link href="#">
+            <Link href="home">
               <a>close</a>
             </Link>
           </button>

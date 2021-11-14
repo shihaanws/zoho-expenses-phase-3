@@ -223,48 +223,7 @@ export default function AddBudget() {
                   <span className="">0</span>
                 </td>
               </tr>
-              {/* <tr className="text-center" id="final-total">
-              <td className="text-overflow">Total</td>
-              <td id="totalcol-0" className="text-right">
-                <span className="">0</span>
-              </td>
-              <td id="totalcol-1" className="text-right">
-                <span className="">0</span>
-              </td>
-              <td id="totalcol-2" className="text-right">
-                <span className="">0</span>
-              </td>
-              <td id="totalcol-3" className="text-right">
-                <span className="">0</span>
-              </td>
-              <td id="totalcol-4" className="text-right">
-                <span className="">0</span>
-              </td>
-              <td id="totalcol-5" className="text-right">
-                <span className="">0</span>
-              </td>
-              <td id="totalcol-6" className="text-right">
-                <span className="">0</span>
-              </td>
-              <td id="totalcol-7" className="text-right">
-                <span className="">0</span>
-              </td>
-              <td id="totalcol-8" className="text-right">
-                <span className="">0</span>
-              </td>
-              <td id="totalcol-9" className="text-right">
-                <span className="">0</span>
-              </td>
-              <td id="totalcol-10" className="text-right">
-                <span className="">0</span>
-              </td>
-              <td id="totalcol-11" className="text-right">
-                <span className=""> 0</span>
-              </td>
-              <td id="main-total" className="text-right">
-                <span className="">0</span>
-              </td>
-            </tr> */}
+           
             </tbody>
           </table>
         </div>
