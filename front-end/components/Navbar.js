@@ -253,7 +253,7 @@ export default function Navbar({ tabPath }) {
                     gap: "2ch",
                   }}
                 >
-                  {user.org_name}
+                  {/* {user.org_name} */}
                   <i
                     className="fas fa-caret-right"
                     style={{ transform: "translateY(1.5px)" }}
@@ -279,7 +279,7 @@ export default function Navbar({ tabPath }) {
                     id={classes.iTag}
                   >
                     {" "}
-                    {user.name}
+                    {/* {user.name} */}
                   </i>
                 </Button>
               </h5>
@@ -432,7 +432,7 @@ export default function Navbar({ tabPath }) {
             <br />
           </ul>
 
-          {user.role == 1 && admins()}
+          {/* {user.role == 1 && admins()} */}
         </div>
       </div>
     </div>
