@@ -22,7 +22,7 @@ export default function emailtemplate() {
   const[showtitle,setshowtitle]=useState(true)
 function handlepopup(){
   setshowtitle(false);
-  setaddmail(true);
+  setaddmail(true); 
 }
     return (
       <div className={styles.page}>
@@ -31,7 +31,7 @@ function handlepopup(){
         <Head>
         <title>Email Templates | Settings</title>
       </Head>
-     
+      
    
         
      
