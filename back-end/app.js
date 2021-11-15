@@ -35,6 +35,7 @@ fastify.register(require("./fastify-router.js/authRouter"));
 fastify.register(require("./fastify-router.js/trips"));
 fastify.register(require("./fastify-router.js/expense"));
 fastify.register(require("./fastify-router.js/reportsRouter"));
+fastify.register(require("./fastify-router.js/users"));
 
 fastify.get("/", async (req, res) => {
   return "Connected to Server";
