@@ -19,7 +19,7 @@ fastify.register(require("fastify-jwt"), {
 // db connection
 mongoose
   .connect(
-    `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.rioa7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+    `mongodb+srv://zoho:zoho@cluster0.rioa7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
   )
   .then(() => console.log("MONGO is ready !!"))
   .catch((err) => console.log(err));
@@ -35,7 +35,7 @@ fastify.register(require("./fastify-router.js/authRouter"));
 fastify.register(require("./fastify-router.js/trips"));
 fastify.register(require("./fastify-router.js/expense"));
 fastify.register(require("./fastify-router.js/reportsRouter"));
-fastify.register(require("./fastify-router.js/users"));
+// fastify.register(require("./fastify-router.js/users"));
 
 fastify.get("/", async (req, res) => {
   return "Connected to Server";
