@@ -25,7 +25,7 @@ const Approver = ({ rowData }) => {
     // setResult(e)
 
     fetch(
-      `https://expensescodingmart.herokuapp.com/api/updatetrips/${data._id}`,
+      `http://localhost:4000/api/updatetrips/${data._id}`,
       {
         method: "PUT",
         headers: {

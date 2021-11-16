@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
   }) => {
     console.log(name, orgname, country, email, password, state, phone);
     const res = await fetch(
-      "https://zoho-expense-server.vercel.app/api/register",
+      "http://localhost:4000/api/register",
       {
         method: "POST",
         headers: {

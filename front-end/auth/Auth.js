@@ -1,5 +1,5 @@
 export const signup = async (user) => {
-  return await fetch("https://zoho-expense-server.herokuapp.com/api/signup", {
+  return await fetch("http://localhost:4000/api/signup", {
     method: "POST",
     headers: {
       Accept: "application/json",
