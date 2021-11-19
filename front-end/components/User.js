@@ -1,25 +1,29 @@
+import classes from "./Admintrip.module.css";
+import React, { useState, useEffect } from "react";
+import NewTrips from "./Trips";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import MaterialTable from "material-table";
 // import PatchedPagination from "PatchedPagination";
+
 import {
   faEllipsisH,
-  faQuestion
+  faQuestion,
+  faSearch,
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { getOrg } from "../auth/User";
+
+import { signin, authenticate, isAutheticated } from "../auth/Auth";
+import router from "next/router";
+import Approver from "./Approver";
 import {
   Button,
   Dialog,
   DialogContent,
   DialogContentText,
-  DialogTitle
+  DialogTitle,
 } from "@material-ui/core";
-import MaterialTable from "material-table";
-import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import { isAutheticated } from "../auth/Auth";
-import { getOrg } from "../auth/Trips";
-import classes from "./Admintrip.module.css";
-import Approver from "./Approver";
-
-
 
 export const IdPass = (data) => {
   let ID = data._id;
@@ -45,7 +49,6 @@ export default function AdminTrip() {
   const handleClickOpen = (e) => {
     setOpen(true);
     setMaindata(e);
-    console.log(e);
   };
 
   const handleClose = () => {
@@ -54,13 +57,10 @@ export default function AdminTrip() {
 
   const Columns = [
     { title: "Trip Id", field: "_id" },
-
-    { title: "Departure Date", field: "depart_date" },
-    { title: "Arrive At", field: "arrive_at" },
-
-    // { title: "Approver", field: "approver" },
+    { title: "Name", field: "name" },
+    { title: "Role", field: "role" },
     { title: "Email", field: "email" },
-    { title: "Status", field: "status" },
+    
   ];
 
   return (
@@ -73,7 +73,7 @@ export default function AdminTrip() {
             className={classes.addnewtrip}
             style={{ padding: "10px 15px" }}
           >
-            <Link href="/trips">
+            <Link href="#">
               <a>+ New Trip</a>
             </Link>
           </button>
@@ -159,18 +159,17 @@ export default function AdminTrip() {
         actions={[
           (rowData) => ({
             icon: () => (
-              <Button
+              <button
                 style={{
                   fontSize: 9,
                   fontWeight: 600,
                   width: 60,
-                  borderRadius: 14,
-                  backgroundColor: "rgb(34, 179, 120)"
+                  borderRadius: 20,
+                  padding: 3,
                 }}
-                variant="contained"
               >
-                View
-              </Button>
+                Approve
+              </button>
             ),
             tooltip: "Approve",
             onClick: (e, data) => {

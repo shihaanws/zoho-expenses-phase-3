@@ -2,6 +2,7 @@ import { FaExclamationCircle } from "react-icons/fa";
 import { signin, authenticate, isAutheticated } from "../auth/Auth";
 
 export const trips = async (trip, token) => {
+<<<<<<< HEAD
   return await fetch(
 <<<<<<< HEAD
     "http://localhost:4000/api/createtrip",
@@ -18,6 +19,17 @@ export const trips = async (trip, token) => {
       body: JSON.stringify(trip),
     }
   )
+=======
+  return await fetch("http://localhost:8080/api/createtrip", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `bearer ${token}`,
+    },
+    body: JSON.stringify(trip),
+  })
+>>>>>>> df4a2d9edbfa98d816c557d1f10eaed449065c03
     .then((response) => {
       return response.json();
     })
@@ -28,6 +40,7 @@ export const getTrip = (email) => {
   const { token } = isAutheticated();
   // let email = user.email;
   console.log(token);
+<<<<<<< HEAD
   return fetch(
 <<<<<<< HEAD
     `http://localhost:4000/api/tripsofuser/${email}`,
@@ -42,6 +55,15 @@ export const getTrip = (email) => {
       },
     }
   )
+=======
+  return fetch(`http://localhost:8080/api/tripsofuser/${email}`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  })
+>>>>>>> df4a2d9edbfa98d816c557d1f10eaed449065c03
     .then((response) => {
       console.log(response.email);
       return response.json();
@@ -53,6 +75,7 @@ export const getOrg = async (org_name) => {
   const { token } = await isAutheticated();
   // let email = user.email;
   console.log(token);
+<<<<<<< HEAD
   return await fetch(
 <<<<<<< HEAD
     `http://localhost:4000/api/alltrips/${org_name}`,
@@ -67,6 +90,15 @@ export const getOrg = async (org_name) => {
       },
     }
   )
+=======
+  return await fetch(`http://localhost:8080/api/alltrips/${org_name}`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  })
+>>>>>>> df4a2d9edbfa98d816c557d1f10eaed449065c03
     .then((response) => {
       console.log(response.email);
       return response.json();
@@ -78,6 +110,7 @@ export const deleteTrip = async (_id) => {
   const { token } = isAutheticated();
   // let email = user.email;
   console.log(token);
+<<<<<<< HEAD
   return await fetch(
 <<<<<<< HEAD
     `http://localhost:4000/api/deletetrips/${_id}`,
@@ -92,6 +125,15 @@ export const deleteTrip = async (_id) => {
       },
     }
   )
+=======
+  return await fetch(`http://localhost:8080/api/deletetrips/${_id}`, {
+    method: "DELETE",
+    headers: {
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  })
+>>>>>>> df4a2d9edbfa98d816c557d1f10eaed449065c03
     .then((response) => {
       console.log(response.email);
       return response.json();
@@ -139,20 +181,34 @@ export const getId = async (id) => {
 //     .catch(err => console.log(err));
 // };
 
+export const updateTripStatus = async (updatedData, id) => {
+  const { token } = isAutheticated();
+  return await fetch(`http://localhost:8080/api/updatetrips/${id}`, {
+    method: "PUT",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `bearer ${token}`,
+    },
+    body: JSON.stringify(updatedData),
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
 export const expenses = async (expense) => {
   const { token } = isAutheticated();
-  return await fetch(
-    "http://localhost:8080/api/createexpense",
-    {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: `bearer ${token}`,
-      },
-      body: JSON.stringify(expense),
-    }
-  )
+  return await fetch("http://localhost:8080/api/createexpense", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `bearer ${token}`,
+    },
+    body: JSON.stringify(expense),
+  })
     .then((response) => {
       return response.json();
     })
