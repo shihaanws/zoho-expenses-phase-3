@@ -3,7 +3,7 @@ import { signin, authenticate, isAutheticated } from "../auth/Auth";
 
 export const trips = async (trip, token) => {
   return await fetch(
-    "https://zoho-expense-server.herokuapp.com/api/createtrip",
+    "http://localhost:8080/api/createtrip",
     {
       method: "POST",
       headers: {
@@ -25,7 +25,7 @@ export const getTrip = (email) => {
   // let email = user.email;
   console.log(token);
   return fetch(
-    `https://zoho-expense-server.herokuapp.com/api/tripsofuser/${email}`,
+    `http://localhost:8080/api/tripsofuser/${email}`,
     {
       method: "GET",
       headers: {
@@ -46,7 +46,7 @@ export const getOrg = async (org_name) => {
   // let email = user.email;
   console.log(token);
   return await fetch(
-    `https://zoho-expense-server.herokuapp.com/api/alltrips/${org_name}`,
+    `http://localhost:8080/api/alltrips/${org_name}`,
     {
       method: "GET",
       headers: {
@@ -67,7 +67,7 @@ export const deleteTrip = async (_id) => {
   // let email = user.email;
   console.log(token);
   return await fetch(
-    `https://zoho-expense-server.herokuapp.com/api/deletetrips/${_id}`,
+    `http://localhost:8080/api/deletetrips/${_id}`,
     {
       method: "DELETE",
       headers: {
@@ -87,7 +87,7 @@ export const getId = async (id) => {
   const { token } = isAutheticated();
   // let email = user.email;
   console.log(token);
-  return await fetch(`https://zoho-expense-server.herokuapp.com/api/${id}`, {
+  return await fetch(`http://localhost:8080/api/${id}`, {
     method: "GET",
     headers: {
       Accept: "application/json",
@@ -122,7 +122,7 @@ export const getId = async (id) => {
 export const expenses = async (expense) => {
   const { token } = isAutheticated();
   return await fetch(
-    "https://zoho-expense-server.herokuapp.com/api/createexpense",
+    "http://localhost:8080/api/createexpense",
     {
       method: "POST",
       headers: {
@@ -145,7 +145,7 @@ export const getExpense = async (email) => {
   console.log(token);
   try {
     const response = await fetch(
-      `https://zoho-expense-server.herokuapp.com/api/expenseofuser/${email}`,
+      `http://localhost:8080/api/expenseofuser/${email}`,
       {
         method: "GET",
         headers: {

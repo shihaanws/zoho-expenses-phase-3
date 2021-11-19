@@ -1,7 +1,7 @@
 const usermodule = require("../controllers/users");
 module.exports = async function (fastify, opts) {
   fastify.get(
-    "/api/getallusers",
+    "/api/getallusers/:orgname",
     {
       preValidation: [fastify.jwtauth],
     },
