@@ -19,7 +19,8 @@ fastify.register(require("fastify-jwt"), {
 // db connection
 mongoose
   .connect(
-    `mongodb+srv://zoho:zoho@cluster0.rioa7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+    // `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.rioa7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+    "mongodb+srv://zohoq:zoho@cluster0.uevgb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
   )
   .then(() => console.log("MONGO is ready !!"))
   .catch((err) => console.log(err));

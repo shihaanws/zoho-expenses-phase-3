@@ -27,7 +27,7 @@ const TripsView = ({ rowData }) => {
     // setResult(e)
 
     fetch(
-      `http://localhost:4000/api/updatetrips/${data._id}`,
+      `https://localhost:8080/api/updatetrips/${data._id}`,
       {
         method: "PUT",
         headers: {

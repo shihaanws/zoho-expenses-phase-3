@@ -139,7 +139,8 @@ function index() {
             <div>
               <label htmlFor="country">Country</label>
               <input
-                type="text"
+                      // let userData = await db.query("SELECT email from user where user_id=?",[userid]);
+type="text"
                 id="country"
                 name="country"
                 value={formik.values.country}

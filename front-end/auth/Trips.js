@@ -3,7 +3,11 @@ import { signin, authenticate, isAutheticated } from "../auth/Auth";
 
 export const trips = async (trip, token) => {
   return await fetch(
+<<<<<<< HEAD
     "http://localhost:4000/api/createtrip",
+=======
+    "http://localhost:8080/api/createtrip",
+>>>>>>> eb5d5c15a7763483022a7d1c1b71a1b60c43ca77
     {
       method: "POST",
       headers: {
@@ -25,7 +29,11 @@ export const getTrip = (email) => {
   // let email = user.email;
   console.log(token);
   return fetch(
+<<<<<<< HEAD
     `http://localhost:4000/api/tripsofuser/${email}`,
+=======
+    `http://localhost:8080/api/tripsofuser/${email}`,
+>>>>>>> eb5d5c15a7763483022a7d1c1b71a1b60c43ca77
     {
       method: "GET",
       headers: {
@@ -46,7 +54,11 @@ export const getOrg = async (org_name) => {
   // let email = user.email;
   console.log(token);
   return await fetch(
+<<<<<<< HEAD
     `http://localhost:4000/api/alltrips/${org_name}`,
+=======
+    `http://localhost:8080/api/alltrips/${org_name}`,
+>>>>>>> eb5d5c15a7763483022a7d1c1b71a1b60c43ca77
     {
       method: "GET",
       headers: {
@@ -67,7 +79,11 @@ export const deleteTrip = async (_id) => {
   // let email = user.email;
   console.log(token);
   return await fetch(
+<<<<<<< HEAD
     `http://localhost:4000/api/deletetrips/${_id}`,
+=======
+    `http://localhost:8080/api/deletetrips/${_id}`,
+>>>>>>> eb5d5c15a7763483022a7d1c1b71a1b60c43ca77
     {
       method: "DELETE",
       headers: {
@@ -87,7 +103,11 @@ export const getId = async (id) => {
   const { token } = isAutheticated();
   // let email = user.email;
   console.log(token);
+<<<<<<< HEAD
   return await fetch(`http://localhost:4000/api/${id}`, {
+=======
+  return await fetch(`http://localhost:8080/api/${id}`, {
+>>>>>>> eb5d5c15a7763483022a7d1c1b71a1b60c43ca77
     method: "GET",
     headers: {
       Accept: "application/json",
@@ -122,7 +142,7 @@ export const getId = async (id) => {
 export const expenses = async (expense) => {
   const { token } = isAutheticated();
   return await fetch(
-    "http://localhost:4000/api/createexpense",
+    "http://localhost:8080/api/createexpense",
     {
       method: "POST",
       headers: {
@@ -145,7 +165,11 @@ export const getExpense = async (email) => {
   console.log(token);
   try {
     const response = await fetch(
+<<<<<<< HEAD
       `http://localhost:4000/api/expenseofuser/${email}`,
+=======
+      `http://localhost:8080/api/expenseofuser/${email}`,
+>>>>>>> eb5d5c15a7763483022a7d1c1b71a1b60c43ca77
       {
         method: "GET",
         headers: {
