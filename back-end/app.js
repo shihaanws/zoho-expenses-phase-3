@@ -45,7 +45,7 @@ fastify.get("/", async (req, res) => {
 // starting server
 const start = async () => {
   try {
-    await fastify.listen(process.env.PORT || 4000, "0.0.0.0");
+    await fastify.listen(process.env.PORT || 8080, "0.0.0.0");
     fastify.log.info("Server is running a");
   } catch (error) {
     throw boom.boomify(error);
