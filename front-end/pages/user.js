@@ -6,7 +6,7 @@ function user() {
   return (
     <div>
       <Head>
-        <title>Trips Page </title>
+        <title>User Page </title>
       </Head>
       <Layout backgroundTab="admintrip" />
       <User />
