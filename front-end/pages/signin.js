@@ -7,6 +7,7 @@ import styles from "../styles/AuthForm.module.css";
 import Image from "next/image";
 import travel from "../public/travelimg3.jpeg";
 
+
 const Signin = () => {
   const router = useRouter();
   const [values, setValues] = useState({
