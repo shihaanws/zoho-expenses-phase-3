@@ -42,6 +42,27 @@ export const getOrg = async (org_name) => {
     .catch((err) => console.log(err));
 };
 
+
+export const getid = async (id) => {
+  const { token } = await isAutheticated();
+  // let email = user.email;
+  console.log(token);
+  return await fetch(
+    `http://localhost:8080/api/getuser/${id}`,
+    {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  )
+    .then((response) => {
+      console.log(response.email);
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
 export const deleteTrip = async (_id) => {
   const { token } = isAutheticated();
   // let email = user.email;

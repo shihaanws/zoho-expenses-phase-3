@@ -12,7 +12,7 @@ import {
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { getOrg } from "../auth/Trips";
+import { getOrg } from "../auth/User";
 
 import { signin, authenticate, isAutheticated } from "../auth/Auth";
 import router from "next/router";
