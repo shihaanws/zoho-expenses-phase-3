@@ -1,29 +1,25 @@
-import classes from "./Admintrip.module.css";
-import React, { useState, useEffect } from "react";
-import NewTrips from "./Trips";
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import MaterialTable from "material-table";
 // import PatchedPagination from "PatchedPagination";
-
 import {
   faEllipsisH,
-  faQuestion,
-  faSearch,
+  faQuestion
 } from "@fortawesome/free-solid-svg-icons";
-
-import { getOrg } from "../auth/Trips";
-
-import { signin, authenticate, isAutheticated } from "../auth/Auth";
-import router from "next/router";
-import Approver from "./Approver";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   Button,
   Dialog,
   DialogContent,
   DialogContentText,
-  DialogTitle,
+  DialogTitle
 } from "@material-ui/core";
+import MaterialTable from "material-table";
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import { isAutheticated } from "../auth/Auth";
+import { getOrg } from "../auth/Trips";
+import classes from "./Admintrip.module.css";
+import Approver from "./Approver";
+
+
 
 export const IdPass = (data) => {
   let ID = data._id;
@@ -49,6 +45,7 @@ export default function AdminTrip() {
   const handleClickOpen = (e) => {
     setOpen(true);
     setMaindata(e);
+    console.log(e);
   };
 
   const handleClose = () => {
@@ -162,17 +159,18 @@ export default function AdminTrip() {
         actions={[
           (rowData) => ({
             icon: () => (
-              <button
+              <Button
                 style={{
                   fontSize: 9,
                   fontWeight: 600,
                   width: 60,
-                  borderRadius: 20,
-                  padding: 3,
+                  borderRadius: 14,
+                  backgroundColor: "rgb(34, 179, 120)"
                 }}
+                variant="contained"
               >
-                Approve
-              </button>
+                View
+              </Button>
             ),
             tooltip: "Approve",
             onClick: (e, data) => {

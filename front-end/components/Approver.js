@@ -1,10 +1,7 @@
-import { getId } from "../auth/Trips";
-import { useEffect, useState } from "react";
-import { signin, authenticate, isAutheticated } from "../auth/Auth";
 import { useRouter } from "next/router";
-import IdPass from "./Admintrip";
-import { Button } from "@material-ui/core";
-import { padding } from "@mui/system";
+import { useEffect, useState } from "react";
+import { isAutheticated } from "../auth/Auth";
+import { getId, updateTripStatus } from "../auth/Trips";
 // import { removeData } from "jquery";
 const Approver = ({ rowData }) => {
   const { token } = isAutheticated();
@@ -24,26 +21,31 @@ const Approver = ({ rowData }) => {
     // console.log(e)
     // setResult(e)
 
-    fetch(
-      `https://localhost:8080/api/updatetrips/${data._id}`,
-      {
-        method: "PUT",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          Authorization: `bearer ${token}`,
-        },
-        body: JSON.stringify({
-          status: e,
-        }),
-      }
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .catch((err) => console.log(err));
-    // alert("status Updated")
-    router.push("/tripmain");
+    // fetch(`https://localhost:8080/api/updatetrips/${data._id}`, {
+    //   method: "PUT",
+    //   headers: {
+    //     Accept: "application/json",
+    //     "Content-Type": "application/json",
+    //     Authorization: `bearer ${token}`,
+    //   },
+    //   body: JSON.stringify({
+    //     status: e,
+    //   }),
+    // })
+    //   .then((response) => {
+    //     return response.json();
+    //   })
+    //   .catch((err) => console.log(err));
+    // // alert("status Updated")
+    // router.push("/tripmain");
+    if (e) {
+      let updatedData = {
+        status: e,
+      };
+      updateTripStatus(updatedData, data._id).then(() =>
+        window.location.replace("/tripmain")
+      );
+    }
   }
   return (
     <div style={{ padding: 100, paddingTop: 0 }}>
@@ -62,7 +64,7 @@ const Approver = ({ rowData }) => {
       <h3> CheckOut : {data.check_out}</h3>
 
       <button
-        value="approve"
+        value="approved"
         className="Approve"
         style={{
           margin: 30,
@@ -77,7 +79,7 @@ const Approver = ({ rowData }) => {
         Approve{" "}
       </button>
       <button
-        value="remove"
+        value="rejected"
         className="Approve"
         style={{
           margin: 30,
@@ -89,14 +91,8 @@ const Approver = ({ rowData }) => {
         onClick={(e) => setLog(e.target.value)}
       >
         {" "}
-        Decline{" "}
+        Reject{" "}
       </button>
-      {/* <input type="button" value="approved" className="Approve" style={{margin:30, padding:10 , backgroundColor:"green",borderRadius:"15px",color:"white"}}/>
-
-           <input  type="button" value="remove" className="Decline" style={{margin:30, padding:10, backgroundColor:"green",borderRadius:"15px",color:"white"}}/>
-            */}
-
-      {/* {rowData.} */}
     </div>
   );
 };
