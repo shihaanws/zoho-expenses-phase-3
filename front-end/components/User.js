@@ -51,7 +51,6 @@ export default function User() {
   useEffect(() => {
     getOrg(user.org_name)
       .then((data) => {
-        console.log(data);
         setdatas(data);
       })
       .catch((err) => console.log("Get Admin Trpis request failed" + err));
@@ -68,13 +67,10 @@ export default function User() {
       let updatedData = {
         role: e,
       };
-      updateUser(updatedData, id);
-      // .then(() =>
-      //   // window.location.replace("/tripmain")
-      // );
-    }
-    else{
-      alert("oops! You can't your role")
+      console.log(updatedData);
+      updateUser(updatedData, id).then(() => window.location.reload());
+    } else {
+      alert("oops! You can't your role");
     }
   };
   const handleClose = () => {
