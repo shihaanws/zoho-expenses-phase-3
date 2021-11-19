@@ -42,18 +42,23 @@ export const getOrg = async (org_name) => {
     .catch((err) => console.log(err));
 };
 
-export const updateUser = async (updatedData, id) => {
-  const { token } = isAutheticated();
-  return await fetch(`http://localhost:8080/api/updateuser/${id}`, {
-    method: "PUT",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      Authorization: `bearer ${token}`,
-    },
-    body: JSON.stringify(updatedData),
-  })
+
+export const getid = async (id) => {
+  const { token } = await isAutheticated();
+  // let email = user.email;
+  console.log(token);
+  return await fetch(
+    `http://localhost:8080/api/getuser/${id}`,
+    {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  )
     .then((response) => {
+      console.log(response.email);
       return response.json();
     })
     .catch((err) => console.log(err));
