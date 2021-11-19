@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import axios from "axios";
 export default function Home() {
   useEffect(() => {
-    axios("http://localhost:4000/", {
+    axios("http://localhost:8080/", {
       method: "GET",
     })
       .then((response) => {
