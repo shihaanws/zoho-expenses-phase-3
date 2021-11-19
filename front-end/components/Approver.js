@@ -18,26 +18,6 @@ const Approver = ({ rowData }) => {
   }, []);
 
   function setLog(e) {
-    // console.log(e)
-    // setResult(e)
-
-    // fetch(`https://localhost:8080/api/updatetrips/${data._id}`, {
-    //   method: "PUT",
-    //   headers: {
-    //     Accept: "application/json",
-    //     "Content-Type": "application/json",
-    //     Authorization: `bearer ${token}`,
-    //   },
-    //   body: JSON.stringify({
-    //     status: e,
-    //   }),
-    // })
-    //   .then((response) => {
-    //     return response.json();
-    //   })
-    //   .catch((err) => console.log(err));
-    // // alert("status Updated")
-    // router.push("/tripmain");
     if (e) {
       let updatedData = {
         status: e,

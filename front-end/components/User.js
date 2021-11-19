@@ -1,5 +1,12 @@
 import classes from "./Admintrip.module.css";
 import React, { useState, useEffect } from "react";
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import Slide from "@mui/material/Slide";
 import NewTrips from "./Trips";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,18 +19,18 @@ import {
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { getOrg } from "../auth/User";
+import { getOrg, updateUser } from "../auth/User";
 
 import { signin, authenticate, isAutheticated } from "../auth/Auth";
 import router from "next/router";
 import Approver from "./Approver";
 import {
-  Button,
-  Dialog,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
-} from "@material-ui/core";
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+} from "@mui/material";
 
 export const IdPass = (data) => {
   let ID = data._id;
@@ -31,11 +38,15 @@ export const IdPass = (data) => {
   // console.log(ID)
 };
 
-export default function AdminTrip() {
-  const [maindata, setMaindata] = useState("");
-  const [open, setOpen] = useState(false);
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
-  const [datas, setdatas] = useState([]);
+export default function User() {
+  const [dialogData, setDialogData] = useState();
+  const [open, setOpen] = useState(false);
+  const [role, setRole] = useState();
+  const [datas, setdatas] = useState();
   const { user } = isAutheticated();
   useEffect(() => {
     getOrg(user.org_name)
@@ -46,21 +57,35 @@ export default function AdminTrip() {
       .catch((err) => console.log("Get Admin Trpis request failed" + err));
   }, []);
 
-  const handleClickOpen = (e) => {
+  const handleClickOpen = (userData) => {
     setOpen(true);
-    setMaindata(e);
+    setDialogData(userData);
+    setRole(userData.role);
   };
 
+  const handleRole = (e, id) => {
+    if (id !== JSON.parse(localStorage.getItem("jwt")).user._id) {
+      let updatedData = {
+        role: e,
+      };
+      updateUser(updatedData, id);
+      // .then(() =>
+      //   // window.location.replace("/tripmain")
+      // );
+    }
+    else{
+      alert("oops! You can't your role")
+    }
+  };
   const handleClose = () => {
     setOpen(false);
   };
 
   const Columns = [
-    { title: "Trip Id", field: "_id" },
+    { title: "User Id", field: "_id" },
     { title: "Name", field: "name" },
     { title: "Role", field: "role" },
     { title: "Email", field: "email" },
-    
   ];
 
   return (
@@ -85,44 +110,63 @@ export default function AdminTrip() {
           </button>
         </div>
       </div>
-
-      <Dialog
-        open={open}
-        className="mainbox"
-        onClose={handleClose}
-        maxWidth="800px"
-      >
-        <DialogTitle>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <lable>Trips Details</lable>
-            <Button className="head" onClick={handleClose}>
-              X
-            </Button>
-          </div>
-        </DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            <Approver rowData={maindata} />
-          </DialogContentText>
-        </DialogContent>
-        {/* <DialogActions></DialogActions> */}
-      </Dialog>
-
+      <div>
+        <Dialog
+          open={open}
+          TransitionComponent={Transition}
+          keepMounted
+          onClose={handleClose}
+          aria-describedby="alert-dialog-slide-description"
+        >
+          <DialogTitle>Employee Details</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              {dialogData && (
+                <div>
+                  <h4>
+                    {"Employee Name : "}
+                    {dialogData.name}
+                  </h4>
+                  <br />
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">Role</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={role}
+                      label="role"
+                      onChange={(e) =>
+                        handleRole(e.target.value, dialogData._id)
+                      }
+                      // defaultValue={dialogData.role === 1 ? 1 : 0}
+                    >
+                      <MenuItem value={0}>Employee</MenuItem>
+                      <br />
+                      <MenuItem value={1}>Approver</MenuItem>
+                    </Select>
+                  </FormControl>
+                </div>
+              )}
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose}>Close</Button>
+            <Button onClick={handleClose}>Done</Button>
+          </DialogActions>
+        </Dialog>
+      </div>
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
       ></link>
       <MaterialTable
-        title={` ${user.org_name} Trips`}
+        title={` ${user.org_name} users`}
         columns={Columns.map((e) => e)}
         data={
           datas &&
           datas.map((e) => {
             return {
               ...e,
-              // DateTime: e.DateTime
-              //   ? moment(e.DateTime, "YYYY-MM-DD").format("DD MMM YYYY")
-              //   : null,
             };
           })
         }
@@ -168,7 +212,7 @@ export default function AdminTrip() {
                   padding: 3,
                 }}
               >
-                Approve
+                Open
               </button>
             ),
             tooltip: "Approve",
