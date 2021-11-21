@@ -1,11 +1,13 @@
 
 import Gpay from "../components/Gpay";
 import Head from "next/head";
-
+import Layout from "../components/Layout";
+import withAuth from "../auth/prodectedroutes";
 function home() {
   return (
     <div>
-      <Head>
+      <Layout />
+      <Head> 
         <title>payment Page </title>
       </Head>
       
@@ -13,5 +15,4 @@ function home() {
     </div>
   );
 }
-
-export default (home);
+export default withAuth(home);
