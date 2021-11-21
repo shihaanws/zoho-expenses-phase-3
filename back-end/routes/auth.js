@@ -7,4 +7,4 @@ const routes = [
     handler: userData.signup,
   },
 ];
-module.exports = routes;
+module.exports = routes; 

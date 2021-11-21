@@ -26,3 +26,13 @@ a {
 .fa-window-close:hover {
   color: #22b378;
 }
+
+
+/* input[id="ss"] {
+  -moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+} */

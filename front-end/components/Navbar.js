@@ -121,7 +121,19 @@ export default function Navbar({ tabPath }) {
               <a className={classes.a}>Reports</a>
             </li>
           </Link>
-          <Link
+          {/* <Link href="#">
+            <li
+              className={
+                tabPath === "/admintrip"
+                  ? classes["navTabLiFocused"]
+                  : classes["navTabLi"]
+              }
+            >
+              <i className="fa fa-money"></i>
+              <a className={classes.a}>Advances</a>
+            </li>
+          </Link> */}
+                    <Link
             href="/user"
             className={
               tabPath === "/user"
@@ -138,6 +150,44 @@ export default function Navbar({ tabPath }) {
             >
               <i className="fas fa-users"></i>{" "}
               <a className={classes.a}>Users</a>
+            </li>
+          </Link>
+          <Link href="/budget">
+            <li
+              className={
+                tabPath === "/admintrip"
+                  ? classes["navTabLiFocused"]
+                  : classes["navTabLi"]
+              }
+            >
+             
+              <i className="fas fa-book"></i>
+              <a className={classes.a}>Budgets</a>
+            </li>
+          </Link>
+          <Link href="#">
+            <li
+              className={
+                tabPath === "/admintrip"
+                  ? classes["navTabLiFocused"]
+                  : classes["navTabLi"]
+              }
+            >
+              <i className="fa fa-money"></i>
+              <a className={classes.a}>Corporate cards</a>
+            </li>
+          </Link>
+          <Link href="/budget">
+            <li
+              className={
+                tabPath === "/admintrip"
+                  ? classes["navTabLiFocused"]
+                  : classes["navTabLi"]
+              }
+            >
+             
+              <i className="fas fa-book"></i>
+              <a className={classes.a}>Budgets</a>
             </li>
           </Link>
           <br />
