@@ -52,6 +52,7 @@ export default function User() {
     getOrg(user.org_name)
       .then((data) => {
         setdatas(data);
+        console.log(data)
       })
       .catch((err) => console.log("Get Admin Trpis request failed" + err));
   }, []);

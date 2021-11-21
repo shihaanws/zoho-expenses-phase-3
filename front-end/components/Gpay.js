@@ -3,7 +3,7 @@ import GooglePayButton from '@google-pay/button-react';
 import { color } from '@mui/system';
 export default function Gpay() {
     return (
-        <div style={{textAlign:"center", color:"black"}}>
+        <div style={{textAlign:"center", color:"black" ,padding:"300px"}}>
              <h3>Google Pay React Demo</h3>
       <br />
       <br />

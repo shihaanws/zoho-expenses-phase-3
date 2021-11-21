@@ -6,7 +6,7 @@ export const getUser = (email) => {
   return fetch(`http://localhost:8080/api/tripsofuser/${email}`, {
     method: "GET",
     headers: {
-      Accept: "application/json",
+      Accept: "application/json", 
       Authorization: `Bearer ${token}`,
     },
   })
