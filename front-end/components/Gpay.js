@@ -18,7 +18,7 @@ export default function Gpay() {
               type: 'CARD',
               parameters: {
                 allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
-                allowedCardNetworks: ['AMEX','MASTERCARD',],
+                allowedCardNetworks: ['AMEX','MASTERCARD','VISA'],
               },
               tokenizationSpecification: {
                 type: 'PAYMENT_GATEWAY',

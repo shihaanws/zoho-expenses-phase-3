@@ -8,7 +8,7 @@ function home() {
       <Head>
         <title>payment Page </title>
       </Head>
-
+      
       <Gpay />
     </div>
   );
