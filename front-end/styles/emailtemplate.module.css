@@ -1,6 +1,12 @@
 .page{
     margin-left: 210px;
-    margin-top: 100px;
+    margin-top: 110px;
+}
+.addmaillbtn{
+    height: 40px;
+    width: 150px;
+    background-color: lightblue;
+    font-weight: 300;
 }
 .popup .overlay{
     position: fixed;
@@ -8,17 +14,17 @@
     background-color: grey;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 90%;
     height: 100vh;
     display: none;
 }
 .popup .content{
     position: absolute;
-    background:#e7feff;
+    background:#FFFFF7;
     transform: translate(-50%,-50%),scale(0);
     z-index: 2;
     height: auto;
-    width: 100%;
+    width: 90%;
 }
 .popup.active .overlay{
     display: block;
