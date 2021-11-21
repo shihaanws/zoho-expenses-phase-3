@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import Layout from "../components/Layout";
 import Emailtemplate from '../components/Emailtemplate';
+import withAuth from "../auth/prodectedroutes";
 
-
-export default function emailtemplate() {
+ function emailtemplate() {
     return (
-      <>
+      <div>
       <Layout />
       <Emailtemplate/>
-</>
+</div>
     )
 }
+export default withAuth(emailtemplate);
