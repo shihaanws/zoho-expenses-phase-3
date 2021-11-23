@@ -2,7 +2,7 @@ import React from "react";
 import withAuth from "../auth/prodectedroutes";
 import Head from "next/head";
 import Advances from "../components/Advances";
-import Layout from "../components/Layout";
+import Layout from "../components/Layout" ;
 
 const UserAdvances = () => {
   return (
