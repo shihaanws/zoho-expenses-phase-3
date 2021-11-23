@@ -68,19 +68,11 @@ export default function InputBudget() {
         }}
       >
         <Select
-          // value={age}
           value={30}
           onChange={handleChange}
           inputProps={{ "aria-label": "Without label" }}
         >
-          {/* <MenuItem value="">
-            <em>April  2021- Mar 2022</em>
-          </MenuItem> */}
-          {/* <NativeSelect
-          defaultValue={30}
-          
-        > */}
-
+         
           <MenuItem value={10}>April 2019- Mar 2020</MenuItem>
           <MenuItem value={20}>April 2020- Mar 2021</MenuItem>
           <MenuItem value={30}>April 2021- Mar 2022</MenuItem>
