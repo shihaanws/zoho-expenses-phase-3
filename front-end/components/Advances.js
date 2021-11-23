@@ -21,6 +21,7 @@ import HomeImage from "../public/home.png";
 import LifeCycle from "../public/lifecycle.png";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { display } from "@mui/system";
 
 export default function Advances() {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -35,6 +36,7 @@ export default function Advances() {
   const [reference, setreference] = useState("");
   const [businessPurpose, setBusinessPurpose] = useState("");
   const [trip, setTrip ]= useState("");
+  const [currency, setCurrency ]= useState("");
   const [cash, setCash ]= useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
@@ -45,7 +47,7 @@ export default function Advances() {
   const [starts, setStarts] = useState([]);
   const [ends, setEnds] = useState([]);
   const [depoist, setDepoist]= useState("");
-
+  const [currencies, setcurrencies ]= useState("");
 
   const handleDelete = (index) => {
     const updatedpay = pay.filter((name, position) => index != position);
@@ -57,6 +59,7 @@ export default function Advances() {
     );
     const updatedstarts = starts.filter((name, position) => index != position);
     const updatedends = ends.filter((name, position) => index != position);
+    const updatedcurrencies= currencies.filter((name, position) => index != position);
     setPay(updatedpay);
     setDepoist(updateddepoist);
     setTrips(updatedtrips);
@@ -64,6 +67,7 @@ export default function Advances() {
     setPurposes(updatedpurposes);
     setStarts(updatedstarts);
     setEnds(updatedends);
+    setcurrencies(updatedcurrencies);
   };
 
   const handleData = () => {
@@ -72,6 +76,7 @@ export default function Advances() {
     setTrips([...trips,trip])
     setDepoist([...depoist,cash])
     setPurposes([...purposes, businessPurpose]);
+    setcurrencies([...currencies,currency])
     setStarts([...starts, startDate]);
     setEnds([...ends, endDate]);
     setreference("");
@@ -82,11 +87,12 @@ export default function Advances() {
     handleDialogClose();
     const data = {
         'amount' : amount,
-        'reference' : reference,
         'date' : startDate,
         'paid_through' : cash,
-        'apply_trip' : trip,
-        'notes' : businessPurpose
+        'reference' : reference,
+        'notes' : businessPurpose,
+       'trip' : trip,
+       'paid_type':currency
     }
     console.log(data);
   };
@@ -102,6 +108,7 @@ export default function Advances() {
     setBusinessPurpose("");
     setStartDate("");
     setEndDate("");
+    setCurrency("");
   };
 
   const handleSelect = () => {
@@ -396,13 +403,50 @@ export default function Advances() {
         <DialogContent>
           <DialogContentText>
             <div className={styles.fieldContainer}>
-            <h5 style={{ color: "#b94a48" }}>INR</h5>
+            <h5 style={{ color: "#b94a48" }}>Amount</h5>
+            <div style={{display:"flex"}}>
+         
+            <FormControl
+        sx={{
+          m: 1,
+          minWidth: 80,
+          width: "70px",
+          height: "25x",
+        }}
+      >
+        <Select
+        value={currency}
+        onChange={(e) => setCurrency(e.target.value)}
+        inputProps={{ "aria-label": "Without label" }}
+        placeholder="INR"
+       
+        >
+         
+          <MenuItem value="INR">INR-Indian Rupee</MenuItem>
+          <MenuItem value="AED">AED-UAE Dirham</MenuItem>
+          <MenuItem value="AUD">AUD-Australian Dollar</MenuItem>
+          <MenuItem value="CAD">CAD-Candian Dollar</MenuItem>
+          <MenuItem value="CNY">CNY-Yuan Renminbi</MenuItem>
+          <MenuItem value="EUR">EUR-Euro</MenuItem>
+          <MenuItem value="GBP">GBP-pound Sterling</MenuItem>
+          <MenuItem value="JPY">JPY-Japnese Yen</MenuItem>
+          <MenuItem value="SAR">SAR- Saudi Riyai</MenuItem>
+          <MenuItem value="USD">USD-United States Dollar</MenuItem>
+          <MenuItem value="ZAR">ZAR-South African Rand</MenuItem>
+       
+
+    </Select> 
+     </FormControl>
               <TextField
                 autoFocus
                 value={amount}
                 onChange={(e) =>setamount(e.target.value)}
                 className={styles.textfield}
+                style={{marginLeft:"-10px",marginTop:"8px",height:"25px"}}
               />
+
+            </div>
+           
               <h5>Date</h5>
               <div className={styles.duration}>
                 <TextField
@@ -433,6 +477,7 @@ export default function Advances() {
         inputProps={{ "aria-label": "Without label" }}
         placeholder="Pretty Cash"
         className={styles.textfield}
+        style={{marginLeft:"-10px"}}
         >
          
           <MenuItem value="Petty Cash">Petty Cash</MenuItem>
