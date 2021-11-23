@@ -31,7 +31,7 @@ exports.updateUserById = async function (req, reply) {
       });
       return update;
     } catch (er) {
-      console.log(er);
+      console.log(er)
       throw boom.boomify(er);
     }//updateuser
   };
