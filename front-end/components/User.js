@@ -70,7 +70,7 @@ export default function User() {
       console.log(updatedData);
       updateUser(updatedData, id).then(() => window.location.reload());
     } else {
-      alert("oops! You can't your role");
+      alert("oops! You can't change your role");
     }
   };
   const handleClose = () => {
