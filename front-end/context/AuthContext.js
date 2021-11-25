@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
   }) => {
     console.log(name, orgname, country, email, password, state, phone);
     const res = await fetch(
-      "http://localhost:8080/api/register",
+      "https://zoho-expense.herokuapp.com/api/register",
       {
         method: "POST",
         headers: {

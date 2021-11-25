@@ -1,5 +1,5 @@
 export const addCustomer = async(customer) => {
-    return await fetch("http://localhost:8080/api/customer", {
+    return await fetch("https://zoho-expense.herokuapp.com/api/customer", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -18,7 +18,7 @@ export const addCustomer = async(customer) => {
   export const deleteCus = async (_id) => {
    
     try {
-      const response = await fetch(`http://localhost:8080/api/customerdelete/${_id}`, {
+      const response = await fetch(`https://zoho-expense.herokuapp.com/api/customerdelete/${_id}`, {
         method: "DELETE",
         headers: {
           Accept: "application/json",
@@ -34,7 +34,7 @@ export const addCustomer = async(customer) => {
   
   export const getId = (user) => {
     // let email = user.email;
-    return fetch(`http://localhost:8080/api/customer/${user}`, {
+    return fetch(`https://zoho-expense.herokuapp.com/api/customer/${user}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -50,7 +50,7 @@ export const addCustomer = async(customer) => {
   };
   
   export const postMail = async(content,email) =>{
-    return await fetch(`http://localhost:8080/sendmail/${email}`, {
+    return await fetch(`https://zoho-expense.herokuapp.com/sendmail/${email}`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -66,7 +66,7 @@ export const addCustomer = async(customer) => {
   
   export const getCus = (_id) => {
     // let email = user.email;
-    return fetch(`http://localhost:8080/api/customers/${_id}`, {
+    return fetch(`https://zoho-expense.herokuapp.com/api/customers/${_id}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -83,7 +83,7 @@ export const addCustomer = async(customer) => {
   
   
   export const getItem = (_id) => {
-    return fetch(`http://localhost:8080/itemall/${_id}`, {
+    return fetch(`https://zoho-expense.herokuapp.com/itemall/${_id}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -100,7 +100,7 @@ export const addCustomer = async(customer) => {
   
   
   export const addItem = async(items) => {
-    return await fetch("http://localhost:8080/items", {
+    return await fetch("https://zoho-expense.herokuapp.com/items", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -119,7 +119,7 @@ export const addCustomer = async(customer) => {
   
   
   export const getItemId = (_id) => {
-    return fetch(`http://localhost:8080/items/${_id}`, {
+    return fetch(`https://zoho-expense.herokuapp.com/items/${_id}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -137,7 +137,7 @@ export const addCustomer = async(customer) => {
   export const deleteItem = async (_id) => {
    
     try {
-      const response = await fetch(`http://localhost:8080/items/${_id}`, {
+      const response = await fetch(`https://zoho-expense.herokuapp.com/items/${_id}`, {
         method: "DELETE",
         headers: {
           Accept: "application/json",
@@ -152,7 +152,7 @@ export const addCustomer = async(customer) => {
   
   
   export const getEstiID = (_id) => {
-    return fetch(`http://localhost:8080/api/allestimates/${_id}`, {
+    return fetch(`https://zoho-expense.herokuapp.com/api/allestimates/${_id}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -174,7 +174,7 @@ export const addCustomer = async(customer) => {
   
   
   export const getSingleEsti = (_id) => {
-    return fetch(`http://localhost:8080/api/estimates/${_id}`, {
+    return fetch(`https://zoho-expense.herokuapp.com/api/estimates/${_id}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -195,7 +195,7 @@ export const addCustomer = async(customer) => {
   
   
   export const getSalesUser = (_id) => {
-    return fetch(`http://localhost:8080/salesall/${_id}`, {
+    return fetch(`https://zoho-expense.herokuapp.com/salesall/${_id}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -211,7 +211,7 @@ export const addCustomer = async(customer) => {
   };
   
   export const getSingleSales = (_id) => {
-    return fetch(`http://localhost:8080/sales/${_id}`, {
+    return fetch(`https://zoho-expense.herokuapp.com/sales/${_id}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -231,7 +231,7 @@ export const addCustomer = async(customer) => {
   // /invoicesall/:useid
   
   export const getInvoiceUser = (_id) => {
-    return fetch(`http://localhost:8080/invoicesall/${_id}`, {
+    return fetch(`https://zoho-expense.herokuapp.com/invoicesall/${_id}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -253,7 +253,7 @@ export const addCustomer = async(customer) => {
   
   
   export const getUserInvoice = (_id) => {
-    return fetch(`http://localhost:8080/invoices/${_id}`, {
+    return fetch(`https://zoho-expense.herokuapp.com/invoices/${_id}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -272,7 +272,7 @@ export const addCustomer = async(customer) => {
   
   
   export const getUserventor = (_id) => {
-    return fetch(`http://localhost:8080/vendorsall/${_id}`, {
+    return fetch(`https://zoho-expense.herokuapp.com/vendorsall/${_id}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -289,7 +289,7 @@ export const addCustomer = async(customer) => {
   
   
   export const addVendor = async(ventor) => {
-    return await fetch("http://localhost:8080/vendors", {
+    return await fetch("https://zoho-expense.herokuapp.com/vendors", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -304,7 +304,7 @@ export const addCustomer = async(customer) => {
   };
   
   export const getcusBusale = (name) => {
-    return fetch(`http://localhost:8080/api/customersale/${name}`, {
+    return fetch(`https://zoho-expense.herokuapp.com/api/customersale/${name}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -322,7 +322,7 @@ export const addCustomer = async(customer) => {
   
   
   export const postSaleEmail = async(content,email) => {
-    return await fetch(`http://localhost:8080/sendsalemail/${email}`, {
+    return await fetch(`https://zoho-expense.herokuapp.com/sendsalemail/${email}`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -341,7 +341,7 @@ export const addCustomer = async(customer) => {
   
   
   export const getven = (_id) => {
-    return fetch(`http://localhost:8080/vendorsall/${_id}`, {
+    return fetch(`https://zoho-expense.herokuapp.com/vendorsall/${_id}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -359,7 +359,7 @@ export const addCustomer = async(customer) => {
     const { token } = isAutheticated();
     console.log(token);
     return fetch(
-      `http://localhost:8080/api/tripsofuser/${email}`,
+      `https://zoho-expense.herokuapp.com/api/tripsofuser/${email}`,
       {
         method: "GET",
         headers: {
@@ -379,7 +379,7 @@ export const addCustomer = async(customer) => {
   
   
   export const postParRec = async(content) => {
-    return await fetch("http://localhost:8080/payments", {
+    return await fetch("https://zoho-expense.herokuapp.com/payments", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -397,7 +397,7 @@ export const addCustomer = async(customer) => {
   // /paymentall/:userid
   
   export const getPayRec = (_id) => {
-    return fetch(`http://localhost:8080/paymentall/${_id}`, {
+    return fetch(`https://zoho-expense.herokuapp.com/paymentall/${_id}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -418,7 +418,7 @@ export const addCustomer = async(customer) => {
   
   
   export const postpaymade = async(content) => {
-    return await fetch("http://localhost:8080/pays", {
+    return await fetch("https://zoho-expense.herokuapp.com/pays", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -436,7 +436,7 @@ export const addCustomer = async(customer) => {
   // /payall/:userid
   
   export const getPaymade = (_id) => {
-    return fetch(`http://localhost:8080/payall/${_id}`, {
+    return fetch(`https://zoho-expense.herokuapp.com/payall/${_id}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -453,7 +453,7 @@ export const addCustomer = async(customer) => {
   
   
   export const getpayresbyid = (_id) => {
-    return fetch(`http://localhost:8080/payments/${_id}`, {
+    return fetch(`https://zoho-expense.herokuapp.com/payments/${_id}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -469,7 +469,7 @@ export const addCustomer = async(customer) => {
   };
   
   export const getPaymadebyuser = (_id) => {
-    return fetch(`http://localhost:8080/pays/${_id}`, {
+    return fetch(`https://zoho-expense.herokuapp.com/pays/${_id}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -485,7 +485,7 @@ export const addCustomer = async(customer) => {
   };
   
   export const getventorByUser = (_id) => {
-    return fetch(`http://localhost:8080/vendors/${_id}`, {
+    return fetch(`https://zoho-expense.herokuapp.com/vendors/${_id}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -506,7 +506,7 @@ export const addCustomer = async(customer) => {
   
   
   export const getPurchasebyuser = (_id) => {
-    return fetch(`http://localhost:8080/purchasesall/${_id}`, {
+    return fetch(`https://zoho-expense.herokuapp.com/purchasesall/${_id}`, {
       method: "GET",
       headers: {
         Accept: "application/json",

@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import axios from "axios";
 export default function Home() {
   useEffect(() => {
-    axios("http://localhost:8080/", {
+    axios("https://zoho-expense.herokuapp.com/", {
       method: "GET",
     })
       .then((response) => {

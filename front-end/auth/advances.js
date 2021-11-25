@@ -4,7 +4,7 @@ export const getAdvances = async (email) => {
     console.log(token);
     try {
       const response = await fetch(
-        `http://localhost:8080/api/advancesofuser/${email}`,
+        `https://zoho-expense.herokuapp.com/api/advancesofuser/${email}`,
         {
           method: "GET",
           headers: {

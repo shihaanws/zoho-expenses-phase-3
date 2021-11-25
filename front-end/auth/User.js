@@ -4,7 +4,7 @@ import { isAutheticated } from "../auth/Auth";
 export const getUser = (email) => {
   const { token } = isAutheticated();
   console.log(token);
-  return fetch(`http://localhost:8080/api/tripsofuser/${email}`, {
+  return fetch(`https://zoho-expense.herokuapp.com/api/tripsofuser/${email}`, {
     method: "GET",
     headers: {
       Accept: "application/json", 
@@ -22,7 +22,7 @@ export const getOrg = async (org_name) => {
   const { token } = await isAutheticated();
   // let email = user.email;
   console.log(token);
-  return await fetch(`http://localhost:8080/api/getallusers/${org_name}`, {
+  return await fetch(`https://zoho-expense.herokuapp.com/api/getallusers/${org_name}`, {
     method: "GET",
     headers: {
       Accept: "application/json",
@@ -40,7 +40,7 @@ export const getid = async (id) => {
   const { token } = await isAutheticated();
   // let email = user.email;
   console.log(token);
-  return await fetch(`http://localhost:8080/api/getuser/${id}`, {
+  return await fetch(`https://zoho-expense.herokuapp.com/api/getuser/${id}`, {
     method: "GET",
     headers: {
       Accept: "application/json",
@@ -56,7 +56,7 @@ export const getid = async (id) => {
 
 export const updateUser = async (updatedData, id) => {
   const { token } = isAutheticated();
-  return await fetch(`http://localhost:8080/api/updateuser/${id}`, {
+  return await fetch(`https://zoho-expense.herokuapp.com/api/updateuser/${id}`, {
     method: "PUT",
     headers: {
       Accept: "application/json",
@@ -77,7 +77,7 @@ export const getExpense = async (email) => {
   console.log(token);
   try {
     const response = await fetch(
-      `http://localhost:8080/api/expenseofuser/${email}`,
+      `https://zoho-expense.herokuapp.com/api/expenseofuser/${email}`,
       {
         method: "GET",
         headers: {
