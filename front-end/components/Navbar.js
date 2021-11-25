@@ -456,7 +456,7 @@ export default function Navbar({ tabPath }) {
                     : classes["navTabLi"]
                 }
               >
-                <i className="fas fa-home"></i>
+                <i className="fa fa-clock-o"></i>
 
                 <a className={classes.a}>Advances</a>
               </li>
