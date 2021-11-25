@@ -1,17 +1,19 @@
+
+
 import Layout from "../components/Layout";
 import Head from "next/head";
 import withAuth from "../auth/prodectedroutes";
-import Emailtemplate from "../components/Emailtemplate"
-function home() {
+import Webtab from "../components/Webtab";
+function webtab() {
   return (
     <div>
       <Head>
-        <title>Email Templates </title>
+        <title>Web tab | Settings | Zoho Expense </title>
       </Head>
      <Layout />
-      <Emailtemplate />
+      <Webtab />
     </div>
   );
 }
 
-export default withAuth(home);
+export default withAuth(webtab);

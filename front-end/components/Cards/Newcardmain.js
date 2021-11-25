@@ -174,6 +174,13 @@ export default function Newcardmain() {
           <p>Popular Cards</p>
           <br />
           <div className={styles.cards}>
+          <div className={styles.bank} >
+          
+            <Link href="/gpay">
+             Add Gpay
+        </Link>
+              
+            </div>
             <div onClick={handleBank} className={styles.bank}>
               HDFC Bank (India)- Credit Card
             </div>
@@ -192,6 +199,7 @@ export default function Newcardmain() {
             <div onClick={handleBank} className={styles.bank}>
               PayPal
             </div>
+          
           </div>
         </div>
         {bankDialog ? (

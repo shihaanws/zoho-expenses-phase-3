@@ -448,6 +448,19 @@ export default function Navbar({ tabPath }) {
                 <a className={classes.a}>Reports</a>
               </li>
             </Link>
+            <Link href="/home">
+              <li
+                className={
+                  tabPath === "/user_advances"
+                    ? classes["navTabLiFocused"]
+                    : classes["navTabLi"]
+                }
+              >
+                <i className="fas fa-home"></i>
+
+                <a className={classes.a}>Advances</a>
+              </li>
+            </Link>
             <Link href="/cardsmain/cardsmain">
               <li
                 className={
